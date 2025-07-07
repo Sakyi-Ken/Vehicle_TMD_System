@@ -7,6 +7,7 @@ public class Delivery {
   private String assignedVehicleId;
   private String assignedDriverId;
   private String eta;
+  // Future implementation will be using Java Date and Time library
   private String status;
 
   public Delivery(String packageId, String origin, String destination, String assignedVehicleId, String assignedDriverId, String eta, String status) {
