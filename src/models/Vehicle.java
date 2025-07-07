@@ -1,12 +1,16 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+import models.MaintenanceRecord;
+
 public class Vehicle {
   private String registrationNumber;
   private String type;
   private int mileage;
   private double fuelUsage;
   private String driverId;
-  // maintenance history should be a map
+  private List<MaintenanceRecord> maintenanceHistory = new ArrayList<>();
 
   public Vehicle(String registrationNumber, String type, int mileage, double fuelUsage, String driverId) {
     this.registrationNumber = registrationNumber;
@@ -51,6 +55,13 @@ public class Vehicle {
     this.driverId = driverId;
   }
 
+  public void addMaintenanceRecord(MaintenanceRecord record) {
+    maintenanceHistory.add(record);
+  }
+  public List<MaintenanceRecord> getMaintenanceHistory() {
+    return maintenanceHistory;
+  }
+
   @Override
   public String toString() {
     return 
@@ -60,6 +71,7 @@ public class Vehicle {
       ", mileage=" + mileage +
       ", fuelUsage=" + fuelUsage +
       ", driverId='" + driverId + '\'' +
+      ", maintenanceRecords=" + maintenanceHistory.size() +
       '}';
   }
 
