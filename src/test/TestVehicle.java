@@ -2,6 +2,9 @@ package test;
 
 import models.Vehicle;
 import models.MaintenanceRecord;
+import utils.FileHandler;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestVehicle{
   public static void main(String[] args) {
@@ -29,5 +32,19 @@ public class TestVehicle{
     System.out.println("Total records: " + truck.getMaintenanceHistory().size());
     System.out.println("First record:");
     System.out.println(truck.getMaintenanceHistory().get(0));
+
+    List<Vehicle> vehicleList = new ArrayList<>();
+    vehicleList.add(truck);
+    FileHandler.saveVehicles(vehicleList);
+
+    List<Vehicle> loadedVehicles = FileHandler.loadVehicles();
+
+    System.out.println("\nLoaded from file:");
+    for (Vehicle v : loadedVehicles) {
+      System.out.println(v);
+      for (MaintenanceRecord r : v.getMaintenanceHistory()) {
+        System.out.println(" - " + r);
+      }
+    }
   }
 };
