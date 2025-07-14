@@ -1,6 +1,6 @@
 package modules;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.List;
 import models.Vehicle;
 import structures.CustomHashTable;
@@ -35,20 +35,20 @@ public class VehicleManager {
 
 // Return all vehicles in the system (for listing or saving)
     public List<Vehicle> getAllVehicles() {
-        List<Vehicle> vehicles = new ArrayList<>();
+        // Removed unused variable 'vehicles'
 
         // Manually iterate through hash table buckets
-        for (int i = 0; i < 16; i++) {
-            var bucket = vehicleTable.getBucket(i);
-            if (bucket != null) {
-                for (var entry : bucket) {
-                    vehicles.add(entry.value); // add the Vehicle object
-                }
-            }
-        }
-        return vehicles;
-
-        //return VehicleTable.getAllValues();
+        // for (int i = 0; i < 16; i++) {
+        //     var bucket = vehicleTable.getBucket(i);
+        //     if (bucket != null) {
+        //         for (var entry : bucket) {
+        //             vehicles.add(entry.value); // add the Vehicle object
+        //         }
+        //     }
+        // }
+        // return vehicles;
+        // Use the getAllValues method from CustomHashTable
+        return vehicleTable.getAllValues();
     }
 
 }

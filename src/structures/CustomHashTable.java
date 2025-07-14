@@ -7,12 +7,12 @@ import java.util.List;
 public class CustomHashTable<K, V> {
     // LinkedList to handle collisions (chaining)
 
-    public class Entry {
+    private class Entry {
 
-        public K key;
-        public V value;
+        K key;
+        V value;
 
-        public Entry(K key, V value) {
+        Entry(K key, V value) {
             this.key = key;
             this.value = value;
         }
@@ -86,10 +86,9 @@ public class CustomHashTable<K, V> {
         return false;
     }
 
-    public LinkedList<Entry> getBucket(int index) {
-        return table[index];
-    } //And change the Entry class to public
-
+    // public LinkedList<Entry> getBucket(int index) {
+    //     return table[index];
+    // } And change the Entry class to public
     public List<V> getAllValues() {
         List<V> values = new ArrayList<>();
         for (LinkedList<Entry> bucket : table) {
