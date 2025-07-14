@@ -20,6 +20,9 @@ public class Delivery {
     this.status = status;
   }
 
+    public Delivery() {
+    }
+
   public String getPackageId() {
     return packageId;
   } 
@@ -44,7 +47,7 @@ public class Delivery {
   public String getAssignedVehicleId() {
     return assignedVehicleId;
   }
-  public void setAssignedVehicleId(String assignedVehicle) {
+  public void setAssignedVehicleId(String assignedVehicleId) {
     this.assignedVehicleId = assignedVehicleId;
   }
 
